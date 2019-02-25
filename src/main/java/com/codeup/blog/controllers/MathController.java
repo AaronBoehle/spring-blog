@@ -41,6 +41,6 @@ public class MathController {
     public String randomNumber (@PathVariable double min, @PathVariable double max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return String.valueOf(Math.floor(Math.random()*(max-min+1)+min));
+        return String.valueOf((int) Math.floor(Math.random()*(max-min+1)+min));
     }
 }

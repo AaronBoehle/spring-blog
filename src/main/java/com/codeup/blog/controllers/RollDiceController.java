@@ -24,7 +24,6 @@ public class RollDiceController {
     @PostMapping("/roll-dice")
     @ResponseBody
     public int getDiceRoll(@RequestParam(name="diceOne") int rollResults){
-        rollResults = (int) Math.random();
         return rollResults;
     }
 

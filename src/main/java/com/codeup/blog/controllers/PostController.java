@@ -14,19 +14,19 @@ public class PostController {
 
     @GetMapping ("/posts/{postID}")
     @ResponseBody
-    public String postID(@PathVariable int postID) {
-        return "view an individual post";
+    public String postID(@PathVariable long postID) {
+        return "view an individual post" +postID;
     }
 
     @GetMapping ("/posts/create")
     @ResponseBody
-    public String postCreateForm() {
+    public String viewForm() {
         return "view the form for creating a post";
     }
 
     @PostMapping("/posts/create")
     @ResponseBody
-    public String postCreateNew () {
-        return "create a new post";
+    public String create (@RequestParam (name="createPost") String createPost) {
+        return "create a new post named: " +createPost;
     }
 }
