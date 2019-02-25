@@ -10,37 +10,37 @@ public class MathController {
 
     @GetMapping("/add/{numOne}/and/{numTwo}")
     @ResponseBody
-    public int addition (@PathVariable int numOne, @PathVariable int numTwo) {
+    public String addition (@PathVariable int numOne, @PathVariable int numTwo) {
         int sumOf = numOne+numTwo;
-        return sumOf;
+        return String.valueOf(sumOf);
     }
 
     @GetMapping("/subtract/{numOne}/from/{numTwo}")
     @ResponseBody
-    public int subtract (@PathVariable int numOne, @PathVariable int numTwo) {
+    public String subtract (@PathVariable int numOne, @PathVariable int numTwo) {
         int differenceOf = numTwo-numOne;
-        return differenceOf;
+        return String.valueOf(differenceOf);
     }
 
     @GetMapping("/multiply/{numOne}/and/{numTwo}")
     @ResponseBody
-    public int multiply (@PathVariable int numOne, @PathVariable int numTwo) {
+    public String multiply (@PathVariable int numOne, @PathVariable int numTwo) {
         int productOf = numOne*numTwo;
-        return productOf;
+        return String.valueOf(productOf);
     }
 
     @GetMapping("/divide/{numOne}/by/{numTwo}")
     @ResponseBody
-    public int divide (@PathVariable int numOne, @PathVariable int numTwo) {
+    public String divide (@PathVariable int numOne, @PathVariable int numTwo) {
         int quotientOf = numOne/numTwo;
-        return quotientOf;
+        return String.valueOf(quotientOf);
     }
 
     @GetMapping("/random/between/{min}/and/{max}")
     @ResponseBody
-    public int getRandomNumber (@PathVariable double min, @PathVariable double max) {
+    public String randomNumber (@PathVariable double min, @PathVariable double max) {
         min = Math.ceil(min);
         max = Math.floor(max);
-        return (int) Math.floor(Math.random()*(max-min+1)+min);
+        return String.valueOf(Math.floor(Math.random()*(max-min+1)+min));
     }
 }
