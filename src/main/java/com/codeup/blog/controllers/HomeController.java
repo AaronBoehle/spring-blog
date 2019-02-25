@@ -16,6 +16,7 @@ public class HomeController {
     }
 
     @GetMapping("/home")
+    @ResponseBody
     public String welcome() {
         return "Home";
     }

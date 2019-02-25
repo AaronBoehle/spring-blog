@@ -35,4 +35,12 @@ public class MathController {
         int quotientOf = numOne/numTwo;
         return quotientOf;
     }
+
+    @GetMapping("/random/between/{min}/and/{max}")
+    @ResponseBody
+    public int getRandomNumber (@PathVariable double min, @PathVariable double max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return (int) Math.floor(Math.random()*(max-min+1)+min);
+    }
 }
