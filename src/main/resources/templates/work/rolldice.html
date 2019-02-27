@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: header('Roll the Dice')"></head>
+<body>
+<div th:replace="/fragments/navbar :: navbar" class=""></div>
+<h1>Feeling Lucky?</h1>
+<ul>
+    <li><a th:href="@{/work/rolldice/1}">1</a></li>
+    <li><a th:href="@{/work/rolldice/2}">2</a></li>
+    <li><a th:href="@{/work/rolldice/3}">3</a></li>
+    <li><a th:href="@{/work/rolldice/4}">4</a></li>
+    <li><a th:href="@{/work/rolldice/5}">5</a></li>
+    <li><a th:href="@{/work/rolldice/6}">6</a></li>
+</ul>
+<p>You rolled: <span th:text="${random}"></span></p>
+<p>You guessed: <span th:text="${guess}"></span></p>
+<p th:if="${random}==${guess}">
+    <span th:text="${guessed_correctly}"></span>
+</p>
+
+</body>
+</html>

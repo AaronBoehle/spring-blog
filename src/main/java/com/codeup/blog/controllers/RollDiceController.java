@@ -1,35 +1,39 @@
 package com.codeup.blog.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class RollDiceController {
 
-    @GetMapping("/roll-dice")
-    @ResponseBody
+    @GetMapping("/work/rolldice")
     public String rollDice () {
-        return "Guess the outcome of rolling a pair of dice!";
+        return "/work/rolldice";
     }
 
-    @GetMapping("/roll-dice/{num}")
-    @ResponseBody
-    public String rollDice (@PathVariable int num) {
-        return "You guessed the results will equal" + num;
+    @GetMapping("/work/rolldice/{guess}")
+    public String rollDice (@PathVariable int guess, Model model) {
+        int random = (int) Math.ceil(Math.random()*6);
+        String congrats = "Nice guess!";
+        model.addAttribute("random", random);
+        model.addAttribute("guess", guess);
+        model.addAttribute("guessed_correctly", congrats);
+        return "/work/rolldice";
     }
 
-    @PostMapping("/roll-dice")
-    @ResponseBody
-    public int getDiceRoll(@RequestParam(name="diceOne") int rollResults){
-        return rollResults;
-    }
-
-    // FER EXAMPLE USES NAMES
-//    @GetMapping("/test.json")
+//    @PostMapping("/roll-work")
 //    @ResponseBody
+//    public String getRollOne () {
+//        min = (int) Math.ceil(min);
+//        model.addA
+//        max = (int) Math.floor(max);
+//        String rollResults = String.valueOf((int) Math.floor(Math.random()*(max-min+1)+min));
+//        return "roll-work/n";
+//    }
+
+//     FER EXAMPLE USES NAMES
+//    @GetMapping("/rolldice.json")
 //    public List<Number> getDice (){
 //        List<Number> diceRoll = new ArrayList<>();
 //        diceRoll.add(1);
