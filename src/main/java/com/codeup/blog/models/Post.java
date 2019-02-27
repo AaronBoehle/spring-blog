@@ -1,11 +1,11 @@
-package com.codeup.blog.posts;
+package com.codeup.blog.models;
 import javax.persistence.*;
 
 @Entity
 @Table(name="posts")
 public class Post {
 
-    // Mapped to SQL
+//     Mapped to SQL
     @Id @GeneratedValue
     private long id;
 
@@ -15,15 +15,22 @@ public class Post {
     @Column(nullable = false, length = 512)
     private String body;
 
-    // Post object properties
+//     Post object contructor(s)
     public Post (long id, String title, String body) {
         this.id = id;
         this.title = title;
         this.body = body;
     }
 
+    public Post (String title, String body) {
+        this.title = title;
+        this.body = body;
+    }
+
     public Post(){ }
 
+
+//    Getters and Setters
     public long getId(){return id;}
     public void setId(long id){this.id=id;}
 

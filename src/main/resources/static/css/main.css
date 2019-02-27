@@ -1,7 +1,7 @@
 body{
     background-color: whitesmoke;
     /*color: yellow;*/
-    padding: 3em 1em 3em 1em;
+    padding: 2em 1em 2em 1em;
     margin: 1em auto 1em auto;
     font-family: 'Titillium Web', sans-serif;
 ;
@@ -16,17 +16,25 @@ li {
     word-spacing: 1em;
     padding-left: .5em;
     padding-right: .5em;
+}
 
-;
+textarea {
+    resize: none;
+    border-radius: 10px;
 }
 a:link {
     /*color: greenyellow;*/
 }
+#myNavBar>ul {
+    padding: .5em 1em .5em 1em;
+    text-align: center;
+    margin: .5em auto .5em auto;
 
+}
 
 #blog-post {
     padding: .5em 1em .5em 1em;
-    margin: .5em 1em .5em 1em;
+    margin: 1em 1em .5em 1em;
     background-color: white;
     border-radius: 15px;
 }
@@ -39,4 +47,21 @@ a:link {
     font-family: monospace;
     text-indent: 1em;
 
+}
+
+#create-post {
+    padding: .5em 1em .5em 1em;
+    margin: 1em 1em .5em 1em;
+    /*background-color: white;*/
+    border-radius: 15px;
+}
+#create-post>p {
+    margin: .5em auto .5em 0;
+    font-family: monospace;
+    text-indent: 1em;
+}
+#title {
+    border-radius: 5px;
+    margin: 0 .5em 0 .5em;
+    padding: .25em .5em .25em .5em;
 }
