@@ -1,8 +1,8 @@
 body{
     background-color: whitesmoke;
     /*color: yellow;*/
-    padding: 3em;
-    margin: auto;
+    padding: 3em 1em 3em 1em;
+    margin: 1em auto 1em auto;
     font-family: 'Titillium Web', sans-serif;
 ;
 }
@@ -21,4 +21,22 @@ li {
 }
 a:link {
     /*color: greenyellow;*/
+}
+
+
+#blog-post {
+    padding: .5em 1em .5em 1em;
+    margin: .5em 1em .5em 1em;
+    background-color: white;
+    border-radius: 15px;
+}
+#blog-post>h3 {
+    margin: .25em auto 1em 0;
+
+}
+#blog-post>p {
+    margin: .5em auto .5em 0;
+    font-family: monospace;
+    text-indent: 1em;
+
 }

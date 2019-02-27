@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-
-</head>
+<head th:replace="/fragments/header :: header('Blog')"></head>
 <body>
+    <div th:replace="/fragments/navbar :: navbar"></div>
+    <h1>Blog</h1>
 
-<h1>This is the POST INDEX page</h1>
+    <th:block th:each="post : ${posts}">
+        <div id="blog-post">
+            <h3 th:text="${post.title}"></h3>
+        <!--<hr/>-->
+            <p th:text="${post.body}"></p>
+        </div>
+    </th:block>
+
+
+    <div th:replace="/fragments/scripts :: scripts"></div>
+
 
 </body>
 </html>

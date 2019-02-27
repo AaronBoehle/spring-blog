@@ -18,19 +18,9 @@ public class RollDiceController {
         String congrats = "Nice guess!";
         model.addAttribute("random", random);
         model.addAttribute("guess", guess);
-        model.addAttribute("guessed_correctly", congrats);
+        model.addAttribute("congrats", congrats);
         return "/work/rolldice";
     }
-
-//    @PostMapping("/roll-work")
-//    @ResponseBody
-//    public String getRollOne () {
-//        min = (int) Math.ceil(min);
-//        model.addA
-//        max = (int) Math.floor(max);
-//        String rollResults = String.valueOf((int) Math.floor(Math.random()*(max-min+1)+min));
-//        return "roll-work/n";
-//    }
 
 //     FER EXAMPLE USES NAMES
 //    @GetMapping("/rolldice.json")
