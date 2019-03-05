@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: header('View User')"></head>
+<body>
+<div th:replace="/fragments/navbar :: navbar"></div>
+<h1>View User</h1>
+
+<div id="blog-user">
+    <h3 th:text="${user.username}"></h3>
+    <!--<hr/>-->
+    <p th:text="${user.email}"></p>
+</div>
+
+
+<div th:replace="/fragments/scripts :: scripts"></div>
+
+
+</body>
+</html>

@@ -1,18 +1,30 @@
 package com.codeup.blog.controllers;
 
+import com.codeup.blog.models.Category;
 import com.codeup.blog.models.Post;
+import com.codeup.blog.models.PostImage;
+import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.PostRepository;
+import com.codeup.blog.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class PostController {
 
     private final PostRepository postDao;
+
     public PostController(PostRepository postDao) {
         this.postDao = postDao;
     }
+
+    @Autowired
+    UserRepository userDao;
 
     // functions that interact with our DaoFactory
     @GetMapping ("/posts")
@@ -36,11 +48,16 @@ public class PostController {
 
     @PostMapping("/posts/create")
     public String create (@RequestParam (name="title") String title,
-                          @RequestParam (name="body") String body)
+                          @RequestParam (name="body") String body
+                          )
     {
-        Post post = new Post (title, body);
+        User user = userDao.findOne(1L);
+        List<PostImage> images = new ArrayList<>();
+        List<Category> categories = new ArrayList<>();
+        Post post = new Post (title, body, user);
         postDao.save(post);
         return "redirect:/posts";
+
     }
 
     @GetMapping("/posts/{id}/edit")

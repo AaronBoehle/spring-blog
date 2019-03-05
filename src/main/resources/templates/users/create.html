@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: header('New User')"></head>
+<body>
+<div th:replace="/fragments/navbar :: navbar"></div>
+<h1>Blog</h1>
+
+<div id="create-post">
+    <form th:action="@{/users/create}" th:method="post">
+        <p>
+            <label for="username">Username: </label>
+            <input name="username" id="username" placeholder="Create a username" />
+        </p>
+        <p>
+            <label for="email">Email: </label>
+            <input name="email" id="email" placeholder="Enter a valid email address" />
+        </p>
+        <p>
+            <label for="password">Password: </label>
+            <input name="password" id="password" placeholder="Create a password" />
+        </p>
+        <button type="submit">Create My Profile</button>
+    </form>
+</div>
+
+<div th:replace="/fragments/scripts :: scripts"></div>
+
+
+</body>
+</html>
