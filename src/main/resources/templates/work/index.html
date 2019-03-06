@@ -3,9 +3,14 @@
 <head th:replace="/fragments/header :: header('Work')"></head>
 <body>
 <div th:replace="/fragments/navbar :: navbar"></div>
-<h1>My Life for Hire</h1>
-<p><a th:href="@{/work/rolldice}">Roll the Dice</a></p>
-<div th:replace="/fragments/scripts :: scripts"></div>
+    <h1>My Life for Hire</h1>
+<main id="portfolio">
+    <p><a th:href="@{/login}">Login Form</a></p>
+    <p><a th:href="@{/work/rolldice}">Roll the Dice</a></p>
+</main>
+
+
+    <div th:replace="/fragments/scripts :: scripts"></div>
 
 </body>
 </html>

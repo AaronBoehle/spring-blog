@@ -18,6 +18,15 @@ public class User {
     @Column(nullable = false, length = 512)
     private String password;
 
+    //Copy constructor - used as an alternative to cloning an object
+    public User (User copy) {
+        id = copy.id;
+        email  = copy.email;
+        username = copy.username;
+        password = copy.password;
+
+
+    }
 
     //     User object contructor(s)
     public User (long id, String username, String email, String password) {

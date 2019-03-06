@@ -1,5 +1,5 @@
 body{
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     /*color: yellow;*/
     padding: 2em 1em 2em 1em;
     margin: 1em auto 1em auto;
@@ -12,7 +12,7 @@ h1 {
 
 li {
     display: inline-block;
-    text-align: center;
+    text-align: left;
     word-spacing: 1em;
     padding-left: .5em;
     padding-right: .5em;
@@ -25,13 +25,19 @@ textarea {
 a:link {
     /*color: greenyellow;*/
 }
+#logo {
+    font-size: 6em;
+    margin-bottom: 0;
+}
+#welcome {
+    text-align: center;
+}
 #myNavBar>ul {
     padding: .5em 1em .5em 1em;
     text-align: center;
     margin: .5em auto .5em auto;
 
 }
-
 #blog-post {
     padding: .5em 1em .5em 1em;
     margin: 1em 1em .5em 1em;
@@ -48,7 +54,6 @@ a:link {
     text-indent: 1em;
 
 }
-
 #create-post {
     padding: .5em 1em .5em 1em;
     margin: 1em 1em .5em 1em;
@@ -64,4 +69,7 @@ a:link {
     border-radius: 5px;
     margin: 0 .5em 0 .5em;
     padding: .25em .5em .25em .5em;
+}
+#portfolio {
+    text-align: center;
 }

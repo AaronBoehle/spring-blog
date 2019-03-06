@@ -5,8 +5,9 @@ import com.codeup.blog.models.Post;
 import com.codeup.blog.models.PostImage;
 import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.PostRepository;
-import com.codeup.blog.repositories.UserRepository;
+import com.codeup.blog.repositories.Users;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class PostController {
     }
 
     @Autowired
-    UserRepository userDao;
+    Users userDao;
 
     // functions that interact with our DaoFactory
     @GetMapping ("/posts")
@@ -51,10 +52,12 @@ public class PostController {
                           @RequestParam (name="body") String body
                           )
     {
-        User user = userDao.findOne(1L);
+        User sessionUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User userDB = userDao.findOne(sessionUser.getId());
+
         List<PostImage> images = new ArrayList<>();
         List<Category> categories = new ArrayList<>();
-        Post post = new Post (title, body, user);
+        Post post = new Post (title, body, userDB);
         postDao.save(post);
         return "redirect:/posts";
 

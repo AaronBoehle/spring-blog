@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/fragments/header :: header('Home Page')"></head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" >
+<head th:replace="/fragments/header :: header('Welcome')"></head>
 <body>
-    <div th:replace="/fragments/navbar :: navbar"></div>
-    <h1>This is the INDEX page</h1>
+    <!--<div th:replace="/fragments/navbar :: navbar"></div>-->
+    <h1 id="logo" style="text-align:center; font-size: 8em;">Ö</h1>
+    <p id="welcome" style="text-align: center"><a th:href="@{/home}">Enter Site</a></p>
     <div th:replace="/fragments/scripts :: scripts"></div>
 
 </body>

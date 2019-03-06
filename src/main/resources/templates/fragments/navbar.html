@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="/fragments/header.html :: header"></head>
 <body>
 <th:block th:fragment="navbar">
     <nav id="myNavBar">
         <ul>
+            <li>
+            </li>
             <li class=""><a th:href="@{/home}">Home</a></li>
             <li class=""><a th:href="@{/work/index}">Work</a></li>
             <li class=""><a th:href="@{/posts}">Blog</a></li>
             <li class=""><a th:href="@{/contact}">Contact</a></li>
+            <li sec:authorize="isAuthenticated()">
+                <form th:action="@{/logout}" th:method="post">
+                    <button class="btn-link btn" style="margin-top: 8px">Logout</button>
+                </form>
+            </li>
         </ul>
     </nav>
 </th:block>
