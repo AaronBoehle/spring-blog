@@ -9,7 +9,7 @@ public class RollDiceController {
 
     @GetMapping("/work/rolldice")
     public String rollDice () {
-        return "/work/rolldice";
+        return "work/rolldice";
     }
 
     @GetMapping("/work/rolldice/{guess}")
