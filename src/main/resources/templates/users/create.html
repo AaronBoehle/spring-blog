@@ -8,9 +8,9 @@
     User ID: <span th:text="${#authentication.principal.id}"/>
     Username: <span th:text="${#authentication.principal.username}"/>
     Email: <span th:text="${#authentication.principal.email}"/>
-</div><head th:replace="/fragments/header :: header('New User')"></head>
+</div><head th:replace="fragments/header :: header('New User')"></head>
 <body>
-<div th:replace="/fragments/navbar :: navbar"></div>
+<div th:replace="fragments/navbar :: navbar"></div>
 <h1>Blog</h1>
 
 <div id="create-post">
@@ -31,7 +31,7 @@
     </form>
 </div>
 
-<div th:replace="/fragments/scripts :: scripts"></div>
+<div th:replace="fragments/scripts :: scripts"></div>
 
 
 </body>
