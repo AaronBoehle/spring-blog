@@ -32,14 +32,14 @@ public class PostController {
     public String all(Model model) {
         Iterable<Post> posts = postDao.findAll();
         model.addAttribute("posts", posts);
-        return "posts/index";
+        return "/posts/index";
     }
 
     @GetMapping ("/posts/{id}")
     public String show (@PathVariable long id, Model model) {
         Post post = postDao.findOne(id);
         model.addAttribute("post", post);
-        return "posts/show";
+        return "/posts/show";
     }
 
     @GetMapping ("/posts/create")
@@ -67,7 +67,7 @@ public class PostController {
     public String edit(@PathVariable long id, Model model){
         Post post = postDao.findOne(id);
         model.addAttribute("post", post);
-        return "posts/edit";
+        return "/posts/edit";
     }
 
     @PostMapping("/posts/{id}/edit")
