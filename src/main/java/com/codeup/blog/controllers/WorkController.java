@@ -8,6 +8,6 @@ public class WorkController {
 
     @GetMapping("/work/index")
     public String work () {
-        return "/work/index";
+        return "work/index";
     }
 }
