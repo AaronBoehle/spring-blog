@@ -19,7 +19,7 @@ public class RollDiceController {
         model.addAttribute("random", random);
         model.addAttribute("guess", guess);
         model.addAttribute("congrats", congrats);
-        return "/work/rolldice";
+        return "work/rolldice";
     }
 
 //     FER EXAMPLE USES NAMES
